@@ -60,13 +60,13 @@ nav ul {
 	}
 
 	.logo {
-		display: none; /* Hide the logo on smaller screens */
-	}
-
-	nav ul {
 		gap: 8px; /* Space between vertical items */
 	}
 
+	nav ul {
+
+		display: none; /* Hide the logo on smaller screens */
+	}
 		nav ul li a {
 			font-size: 16px; /* Adjust menu font size */
 		}
@@ -83,11 +83,12 @@ nav ul {
 	}
 
 	.logo {
-		display: none; /* Hide the logo on smaller screens */
+		gap: 8px; /* Reduce gap between items */
 	}
 
 	nav ul {
-		gap: 8px; /* Reduce gap between items */
+
+		display: none; /* Hide the logo on smaller screens */
 	}
 
 		nav ul li a {
