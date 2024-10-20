@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>GrilledSwordGames</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/main.js" defer></script>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous"
+			src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0"></script>
+
+	<header>
+		<div class="logo">
+			<h1>GrilledSwordGames</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#games">Games</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#posts">Updates</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="home" class="hero">
+		<div class="overlay"></div>
+		<video autoplay muted loop id="hero-video">
+			<source src="vid/background.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<h2>You are trapped</h2>
+		<p>Observe your surroundings...</p>
+	</section>
+
+	<!-- Games -->
+
+	<section id="games" class="games-section">
+		<h2>My Games</h2>
+		<div class="games-list" id="gamesList">
+			<!-- Game items will be injected here by JavaScript -->
+		</div>
+	</section>
+
+	<section id="about" class="about-section">
+		<h2>About Us</h2>
+		<p>Crafting horror experiences that make your skin crawl and heart race. My passion is to create terrifying, immersive indie games that linger with you long after you've played them.</p>
+	</section>
+
+	<section id="posts" class="posts-section">
+		<h2>Latest Posts</h2>
+		<p>Check out our latest posts on Facebook and Instagram</p>
+
+		<!-- The embedded Facebook posts -->
+		<div class="fb-post" data-href="https://www.facebook.com/original.fiends/posts/pfbid0fwFm3VNLko96x4QKXQLBcFzX5EiqjHGVjkqfpbt9qFEc2LQCKttJyioFrrAjxjVbl"
+			 data-width="500">
+		</div>
+		<!-- Container for buttons and Facebook post -->
+		<div class="posts-grid">
+			<!-- Button container for both Facebook and Instagram buttons -->
+			<div class="social-buttons">
+				<a href="https://www.facebook.com/original.fiends" target="_blank" class="btn-fb">Visit My Facebook</a>
+				<a href="https://www.instagram.com/white.wynter_" target="_blank" class="btn-ig btn-instagram">Visit My Instagram</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact" class="contact-section">
+		<h2>Contact Us</h2>
+		<form>
+			<input type="text" placeholder="Your Name" required>
+			<input type="email" placeholder="Your Email" required>
+			<textarea placeholder="Your Message"></textarea>
+			<button type="submit">Submit</button>
+		</form>
+	</section>
+
+	<footer>
+		<p>&copy; 2024 GrilledSwordGames - All Rights Reserved</p>
+	</footer>
+</body>
+</html>
