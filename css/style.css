@@ -56,11 +56,11 @@ nav ul {
 @media (max-width: 1024px) {
 	header {
 		flex-direction: column; /* Stack items vertically */
-		padding: 20px;
+		padding: 24px;
 	}
 
-	.logo {
-		gap: 8px; /* Space between vertical items */
+	.logo h1 {
+		font-size: 22px;
 	}
 
 	nav ul {
@@ -79,11 +79,11 @@ nav ul {
 /* Optimized for Smaller Mobile Screens (Phones) */
 @media (max-width: 480px) {
 	header {
-		padding: 15px;
+		padding: 36px;
 	}
 
-	.logo {
-		gap: 8px; /* Reduce gap between items */
+	.logo h1 {
+		font-size: 22px;
 	}
 
 	nav ul {
