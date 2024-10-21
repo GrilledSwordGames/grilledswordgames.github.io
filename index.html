@@ -7,6 +7,9 @@
 	<title>GrilledSwordGames</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/main.js" defer></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -38,12 +41,9 @@
 		<p>Observe your surroundings...</p>
 	</section>
 
-	<!-- Games -->
-
 	<section id="games" class="games-section">
 		<h2>My Games</h2>
 		<div class="games-list" id="gamesList">
-			<!-- Game items will be injected here by JavaScript -->
 		</div>
 	</section>
 
@@ -72,12 +72,14 @@
 
 	<section id="contact" class="contact-section">
 		<h2>Contact Us</h2>
-		<form>
-			<input type="text" placeholder="Your Name" required>
-			<input type="email" placeholder="Your Email" required>
-			<textarea placeholder="Your Message"></textarea>
-			<button type="submit">Submit</button>
+		<form action="https://api.web3forms.com/submit" method="POST">
+			<input type="hidden" name="access_key" value="ea3ee64e-18cf-474f-a346-4de5d181a546">
+			<input type="text" name="name" placeholder="Your Name" required>
+			<input type="email" name="email" placeholder="Your Email" required>
+			<textarea name="message" placeholder="Your Message" required></textarea>
+			<button type="submit">Submit Message</button>
 		</form>
+		<script src="https://web3forms.com/client/script.js" async defer></script>
 	</section>
 
 	<footer>

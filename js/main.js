@@ -47,12 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
             description: 'Coming Soon!',
             downloadLink: 'path/to/game2.zip',
         },
-        {
-            imgSrc: 'img/comingSoon.png',
-            title: 'Platformer',
-            description: 'Coming Soon!',
-            downloadLink: 'path/to/game3.zip',
-        },
         // Add more game objects as needed
     ];
 

@@ -29,6 +29,8 @@ header {
 
 .logo h1 {
 	font-size: 2rem; /* Increase font size */
+	font-family: "Raleway", sans-serif;
+	font-weight: 400;
 	color: #FFFFFF;
 }
 
@@ -102,6 +104,9 @@ nav ul {
 	padding: 50px 20px;
 	text-align: center;
 }
+	.games-section h2 {
+		padding: 30px;
+	}
 
 .games-list {
 	display: flex;
@@ -132,7 +137,7 @@ nav ul {
 
 	.game-item:hover {
 		transform: scale(1.05); /* Scale on hover */
-		box-shadow: 0px 0px 15px #f00; /* Shadow on hover */
+		box-shadow: 0px 0px 30px #0A0A0A; /* Shadow on hover */
 	}
 
 .about-section p {
@@ -173,6 +178,8 @@ footer {
 	padding: 1rem;
 	text-align: center;
 	background-color: #000;
+	font-family: "Raleway", sans-serif;
+	font-weight: 200;
 }
 
 /* Posts Section Styling */
