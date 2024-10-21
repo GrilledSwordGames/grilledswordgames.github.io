@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
             imgSrc: 'img/mindscape.png',
             title: 'MindScape',
             description: "Don't overlook any anomalies.",
-            downloadLink: 'path/to/mindscape.zip', // Update with the correct link
+            downloadLink: 'coming-soon.html',
         },
         {
             imgSrc: 'img/comingSoon.png',
             title: 'Typing Horror',
             description: 'Coming Soon!',
-            downloadLink: 'path/to/game2.zip',
+            downloadLink: 'coming-soon.html',
         },
         // Add more game objects as needed
     ];
