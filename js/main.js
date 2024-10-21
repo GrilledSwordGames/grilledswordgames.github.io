@@ -41,12 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
             description: "Don't overlook any anomalies.",
             downloadLink: 'coming-soon.html', // Navigates to countdown page
         },
-        {
-            imgSrc: 'img/comingSoon.png',
-            title: 'Typing Horror',
-            description: 'Coming Soon!',
-            downloadLink: 'coming-soon.html', // Navigates to countdown page
-        },
         // Add more game objects as needed
     ];
 
