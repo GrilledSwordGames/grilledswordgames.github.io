@@ -61,10 +61,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src="${game.imgSrc}" alt="${game.title}">
                 <h3>${game.title}</h3>
                 <p>${game.description}</p>
-                <a href="${game.downloadLink}" class="btn-download">Download Game</a> <!-- Removed download attribute -->
+                <a href="#" class="btn-download">Download Game</a> <!-- Removed download attribute -->
                 `;
 
+            // Append the game item to the list
             gamesList.appendChild(gameItem);
+
+            // Attach event listener for redirection
+            const downloadButton = gameItem.querySelector('.btn-download');
+            downloadButton.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default anchor behavior
+                window.location.href = game.downloadLink; // Navigate to the countdown page
+            });
         });
     }
 
