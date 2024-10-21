@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\css\\coming-soon.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\coming-soon.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\coming-soon.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:coming-soon.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\js\\countdown.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\countdown.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +34,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 340,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "countdown.js",
+              "DocumentMoniker": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\js\\countdown.js",
+              "RelativeDocumentMoniker": "js\\countdown.js",
+              "ToolTip": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\js\\countdown.js",
+              "RelativeToolTip": "js\\countdown.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-21T02:02:30.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "coming-soon.css",
+              "DocumentMoniker": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\css\\coming-soon.css",
+              "RelativeDocumentMoniker": "css\\coming-soon.css",
+              "ToolTip": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\css\\coming-soon.css",
+              "RelativeToolTip": "css\\coming-soon.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-21T01:59:07.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "coming-soon.html",
+              "DocumentMoniker": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\coming-soon.html",
+              "RelativeDocumentMoniker": "coming-soon.html",
+              "ToolTip": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\coming-soon.html",
+              "RelativeToolTip": "coming-soon.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-10-21T01:57:56.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "main.js",
               "DocumentMoniker": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\js\\main.js",
               "RelativeDocumentMoniker": "js\\main.js",
               "ToolTip": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\js\\main.js",
               "RelativeToolTip": "js\\main.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwDAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwDkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-10-21T01:39:15.701Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\css\\style.css",
               "RelativeDocumentMoniker": "css\\style.css",
@@ -52,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\kissn\\OneDrive\\Documents\\GitHub\\grilledswordgames.github.io\\index.html",
               "RelativeDocumentMoniker": "index.html",

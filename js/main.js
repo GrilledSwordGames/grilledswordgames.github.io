@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
             imgSrc: 'img/mindscape.png',
             title: 'MindScape',
             description: "Don't overlook any anomalies.",
-            downloadLink: 'coming-soon.html',
+            downloadLink: 'coming-soon.html', // Navigates to countdown page
         },
         {
             imgSrc: 'img/comingSoon.png',
             title: 'Typing Horror',
             description: 'Coming Soon!',
-            downloadLink: 'coming-soon.html',
+            downloadLink: 'coming-soon.html', // Navigates to countdown page
         },
         // Add more game objects as needed
     ];
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src="${game.imgSrc}" alt="${game.title}">
                 <h3>${game.title}</h3>
                 <p>${game.description}</p>
-                <a href="${game.downloadLink}" class="btn-download" download>Download Game</a>
+                <a href="${game.downloadLink}" class="btn-download">Download Game</a> <!-- Removed download attribute -->
                 `;
 
             gamesList.appendChild(gameItem);
