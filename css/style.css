@@ -1,0 +1,647 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Courier New', Courier, monospace;
+	color: #fff;
+	background-color: #111;
+	line-height: 1.6;
+	padding-top: 0px; /* Prevent content from going under the fixed header */
+	align-items: center;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.75rem; /* Increase padding for thicker header */
+	background: rgba(0, 0, 0, 0.5); /* Keep the transparent effect */
+	backdrop-filter: blur(25px);
+	position: fixed;
+	border-radius: 45px; /* Rounded corners */
+	top: 1%;
+	left: 50%; /* Move header horizontally to the center */
+	transform: translateX(-50%); /* Center header by translating it back */
+	width: 90%; /* Make sure the width is 90% to provide space for the margin */
+	z-index: 1000;
+	transition: background-color 0.3s;
+	box-shadow: 0px 5px 30px #000000;
+	border: 1px solid #0F0F0F;
+}
+
+.logo h1 {
+	font-size: 2rem; /* Increase font size */
+	font-family: "Raleway", sans-serif;
+	font-weight: 600;
+	color: #FFFFFF;
+	margin-left: 25px;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	top: 2%;
+}
+
+	nav ul li {
+		margin-right: 25px;
+		margin-left: 40px;
+	}
+
+		nav ul li a {
+			text-decoration: none;
+			color: #fff;
+			font-size: 1.5rem;
+			transition: color 0.3s;
+			font-family: "Raleway", sans-serif;
+			font-weight: 400;
+			align-items: center; /* Center align the items */
+		}
+
+			nav ul li a:hover {
+				color: #f00;
+			}
+
+/* Mobile navigation (dropdown) */
+.menu-icon {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+	margin-left: auto;
+}
+
+	.menu-icon span {
+		width: 30px;
+		height: 3px;
+		background-color: white;
+		margin: 4px 0;
+		transition: all 0.3s ease;
+	}
+
+/* HERO ITEMS */
+.hero {
+	height: 100vh;
+	position: relative;
+	margin-top: 0; /* Ensure no gap at the top */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #fff;
+	overflow: hidden; /* Ensures the video doesn't spill outside the section */
+}
+	.hero video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -1; /* Places the video behind the text */
+		transform: translate(-50%, -50%);
+		object-fit: cover; /* Ensures the video covers the entire section */
+	}
+	.hero .overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.4); /* Dark overlay to improve text visibility */
+		z-index: 0;
+	}
+	.hero h2, .hero p {
+		z-index: 1; /* Ensures the text is above the video and overlay */
+		font-size: 2.5rem;
+		animation: floating 3s ease-in-out infinite;
+	}
+	.hero p {
+		font-size: 2rem;
+		margin-top: 10px;
+		z-index: 1;
+	}
+	.hero c {
+		font-size: 1.5rem;
+		margin-top: 10px;
+		z-index: 1;
+	}
+@keyframes floating {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+.scroll-down-container {
+	position: absolute;
+	bottom: 30px; /* Push it down near the bottom of the hero section */
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.scroll-text {
+	font-size: 18px;
+	color: #fff;
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: 10px;
+	opacity: 0.8;
+	animation: scroll-text-blink 4s infinite;
+}
+	.scroll-text c {
+		display: flex;
+	}
+@keyframes scroll-text-blink {
+	0%, 100% {
+		opacity: 0.8;
+	}
+
+	50% {
+		opacity: 0;
+	}
+}
+.mouse-icon {
+	width: 36px;
+	height: 60px;
+	border: 1px solid #fff;
+	border-radius: 50px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+	.mouse-icon .wheel {
+		width: 4px;
+		height: 8px;
+		background-color: #fff;
+		border-radius: 50%;
+		position: absolute;
+		top: 6px;
+		animation: scroll-wheel 1.5s infinite;
+	}
+@keyframes scroll-wheel {
+	0% {
+		top: 6px;
+		opacity: 1;
+	}
+
+	50% {
+		top: 12px;
+		opacity: 0;
+	}
+
+	100% {
+		top: 6px;
+		opacity: 1;
+	}
+}
+
+/* GAME ITEMS */
+.games-section, .about-section, .contact-section {
+	padding: 50px 20px;
+	text-align: center;
+}
+	.games-section h2 {
+		padding: 30px;
+	}
+.games-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center; /* Center align items */
+	gap: 20px; /* Space between items */
+}
+.game-item {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	backdrop-filter: blur(10px); /* Frosted glass effect */
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 20px;
+	text-align: center;
+	width: 300px; /* Fixed width for uniformity */
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	perspective: 1000px;
+}
+	.game-item img {
+		width: 100%; /* Responsive image */
+		height: auto; /* Maintain aspect ratio */
+	}
+	.game-item h3 {
+		margin-top: 15px;
+		color: #f00; /* Red color for title */
+	}
+	.game-item:hover {
+		transform: scale(1.05);
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+	}
+	.game-item-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+
+	}
+	.game-item:hover .game-item-inner {
+	transform: rotateY(180deg);
+
+	}
+	.game-item-front, .game-item-back {
+	position: absolute;
+	width: 100%;
+	backface-visibility: hidden;
+
+	}
+	.game-item-back {
+	transform: rotateY(180deg);
+
+	}
+
+/* ABOUT ITEMS */
+.about-section p {
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: 18px;
+}
+.contact-section form {
+	max-width: 500px;
+	margin: 0 auto;
+}
+.contact-section input, .contact-section textarea {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #222;
+	color: #fff;
+	border: 1px solid #444;
+}
+.contact-section button {
+	padding: 10px 20px;
+	background-color: #f00;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	font-size: 18px;
+	transition: background-color 0.3s;
+}
+	.contact-section button:hover {
+		background-color: #d00;
+	}
+footer {
+	padding: 1rem;
+	text-align: center;
+	background-color: #000;
+	font-family: "Raleway", sans-serif;
+	font-weight: 200;
+}
+
+/* Posts Section Styling */
+.posts-section {
+	background-color: #1a1a1a; /* Darker shade than #111 */
+	margin-top: 15px;
+	text-align: center; /* Center the text */
+	padding: 2rem 1rem; /* Add some padding */
+	border-radius: 8px; /* Optional: Rounded corners */
+}
+.posts-grid {
+	display: grid; /* Use grid layout */
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+	gap: 1rem; /* Space between grid items */
+	justify-items: center; /* Center items within their grid cell */
+	margin-top: 2rem; /* Space above the grid */
+}
+.social-buttons {
+	padding: 50px;
+	display: flex; /* Use flexbox for the buttons */
+	justify-content: center; /* Center align the buttons horizontally */
+	gap: 1rem; /* Space between buttons */
+}
+/* Facebook Button */
+.btn-fb {
+	background-color: #007bff; /* Button color */
+	color: white; /* Text color */
+	padding: 10px 20px; /* Padding */
+	border-radius: 5px; /* Rounded corners */
+	text-decoration: none; /* Remove underline */
+	transition: background-color 0.3s; /* Transition for hover effect */
+}
+	.btn-fb:hover {
+		background-color: #0056b3; /* Darker color on hover */
+	}
+/* Instagram Button */
+.btn-ig {
+	background-color: #FF4876; /* Button color */
+	color: white; /* Text color */
+	padding: 10px 20px; /* Padding */
+	border-radius: 5px; /* Rounded corners */
+	text-decoration: none; /* Remove underline */
+	transition: background-color 0.3s; /* Transition for hover effect */
+}
+	.btn-ig:hover {
+		background-color: #6E1D41; /* Darker color on hover */
+	}
+/* Instagram And Facebook Posts */
+.fb-post {
+	max-width: 100%; /* Ensure post is responsive */
+	margin-top: 2rem; /* Reduce the space above the Facebook post */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+.instagram-media {
+	max-width: 100%; /* Ensure it is responsive */
+	margin-top: 2rem; /* Space above the Instagram post */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+/* Download Button*/
+.btn-download {
+	display: inline-block;
+	background-color: #FF4876; /* Same style as download initially */
+	color: white;
+	padding: 10px 20px;
+	margin-top: 10px; /* Space between buttons */
+	border-radius: 5px;
+	text-decoration: none;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+	.btn-download:hover {
+		transform: scale(1.1);
+		box-shadow: 0px 4px 20px rgba(255, 72, 118, 0.5);
+	}
+/* language Button*/
+
+.language-selector {
+	position: relative; /* Positioning for dropdown */
+	font-family: "Raleway", sans-serif;
+	font-weight: 400; /* Slightly bolder font weight */
+	text-decoration: none !important;
+	color: #fff;
+	font-size: 1.5rem;
+	cursor: pointer; /* Change cursor to pointer */
+	background: rgba(0, 0, 0, 0.5); /* Background color for the button */
+	border: 1px solid #444; /* Border color */
+	border-radius: 32px; /* Rounded corners */
+	padding: 10px 15px; /* Padding for the button */
+	transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+	display: flex;
+	align-items: center; /* Center align the items */
+}
+
+	.language-selector:hover {
+		background: rgba(255, 0, 0, 0.3); /* Change background color on hover */
+	}
+
+	/* Adjust the dropdown button specifically */
+	.language-selector button {
+		background: transparent; /* Make the button background transparent */
+		color: inherit; /* Inherit text color from parent */
+		border: none; /* No border */
+		outline: none; /* Remove outline */
+		font-size: inherit; /* Inherit font size from parent */
+		cursor: pointer; /* Change cursor to pointer */
+		padding: 0; /* Remove padding from button */
+		margin: 0; /* Remove margin */
+		width: 100%; /* Full width for better click area */
+	}
+
+/* Update the dropdown items styles as needed */
+.language-dropdown {
+	display: none; /* Hide dropdown by default */
+	position: absolute;
+	top: calc(100% + 15px); /* Position below the button with a small gap */
+	left: 50%; /* Align to the center of the button */
+	transform: translateX(-50%); /* Center the dropdown */
+	background: rgba(0, 0, 0, 0.8); /* Background color for dropdown */
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border-radius: 32px; /* Rounded corners for dropdown */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+	z-index: 1000; /* Ensure it appears above other content */
+	text-align: center;
+}
+
+	/* Ensure that the links in the dropdown are styled properly */
+	.language-dropdown li a {
+		display: block; /* Full width clickable area */
+		padding: 10px 15px; /* Padding for dropdown items */
+		color: white; /* Text color */
+		text-decoration: none; /* Remove underline */
+		transition: background-color 0.3s; /* Transition for hover effect */
+		border-radius: 32px;
+	}
+
+		.language-dropdown li a:hover {
+			background: rgba(255, 0, 0, 0.3); /* Change color on hover */
+			border-radius: 32px;
+		}
+
+/* Show dropdown when active */
+.language-selector.active .language-dropdown {
+	display: block; /* Show the dropdown */
+	backdrop-filter: blur(25px); /* Blur effect */
+}
+
+@media (max-width: 1300px) {
+	header {
+		padding: 1rem;
+	}
+
+	.logo h1 {
+		font-size: 1rem;
+	}
+
+	nav ul {
+		margin-right: 0px;
+		visibility: hidden;
+		opacity: 0;
+		transform: translateY(-20px);
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		flex-direction: row;
+		background: rgba(0, 0, 0, 0.75); /* Átlátszó háttér */
+		box-shadow: 0px 0px 30px #080808;
+		border-radius: 32px;
+		position: absolute;
+		top: 120%;
+		right: 0;
+		width: 100%;
+		text-align: center;
+		z-index: 999; /* Emeld a menüt elölre */
+	}
+
+	nav.active ul {
+		visibility: visible;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	nav ul li {
+		margin: 0;
+		padding: 20px 0;
+		flex-grow: 1;
+		border-bottom: none;
+	}
+
+		nav ul li a {
+			font-size: 0.5rem;
+			white-space: nowrap;
+		}
+
+	.menu-icon {
+		display: flex;
+	}
+
+	/* Optionális: Háttér hozzáadása */
+	nav:before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1; /* Tartalom mögé helyezése */
+	}
+
+	.scroll-text {
+		font-size: 14px;
+	}
+
+	.mouse-icon {
+		width: 18px;
+		height: 30px;
+		border-radius: 5px;
+	}
+
+		.mouse-icon .wheel {
+			width: 2px;
+			height: 4px;
+			background-color: #fff;
+			border-radius: 50%;
+			position: absolute;
+			top: 6px;
+			animation: scroll-wheel 2s infinite;
+		}
+
+	/* Wheel Animation */
+	@keyframes scroll-wheel {
+		0% {
+			top: 18px;
+			opacity: 1;
+		}
+
+		100% {
+			top: 6px;
+			opacity: 0;
+		}
+	}
+
+	.hero h2 {
+		z-index: 1; /* Ensures the text is above the video and overlay */
+		font-size: 1.5rem;
+	}
+
+	.hero p {
+		font-size: 1rem;
+		z-index: 1;
+	}
+
+	.hero c {
+		font-size: 1rem;
+		margin-top: 5px;
+		z-index: 1;
+	}
+
+	.language-selector {
+		position: relative; /* Position relative to the header */
+		font-size: 0.5rem;
+	}
+
+	/* Dropdown styles */
+	.language-dropdown {
+		display: none; /* Hide by default */
+		position: absolute;
+		top: calc(100% + 20px); /* Position below the language button */
+		left: initial;
+		transform: translateX(50%); /* Center the dropdown relative to the header */
+		background: rgba(0, 0, 0, 0.8); /* Background for visibility */
+		list-style: none;
+		padding: 5px; /* Add padding around the dropdown */
+		border-radius: 32px; /* Rounded corners */
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+		z-index: 1000; /* Ensure it appears above other content */
+		width: fit-content; /* Automatically size the dropdown */
+	}
+
+		/* Display dropdown items side by side */
+		.language-dropdown li {
+			display: block;
+			padding: 5px;
+		}
+
+			/* Styling for dropdown links */
+			.language-dropdown li a {
+				padding: 10px 20px; /* Adjust padding for better spacing */
+			}
+
+	/* Show dropdown when the .active class is applied */
+	.language-selector.active .language-dropdown {
+		display: block; /* Flexbox to show items side by side */
+		flex-direction: row;
+		justify-content: center; /* Ensure the dropdown content is centered */
+		align-items: center;
+	}
+}
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #111;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	transition: opacity 0.5s ease-out; /* Add transition for smooth fade-out */
+}
+
+.spinner {
+	width: 50px;
+	height: 50px;
+	border: 5px solid rgba(255, 255, 255, 0.3);
+	border-top-color: #fff;
+	border-radius: 50%;
+	animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.hidden {
+	opacity: 0; /* Fade out effect */
+	visibility: hidden; /* Hide the preloader completely */
+}
+
+.contact-section input:focus, .contact-section textarea:focus {
+	border: 1px solid #FF4876;
+	box-shadow: 0 0 10px rgba(255, 72, 118, 0.5);
+	transition: 0.3s ease;
+}

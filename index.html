@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>GrilledSwordGames</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/main.js" defer></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="preloader">
+		<div class="spinner"></div>
+	</div>
+
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous"
+			src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0"></script>
+
+	<header>
+		<div class="logo">
+			<h1>GrilledSwordGames</h1>
+		</div>
+		<div class="menu-icon" onclick="toggleMenu()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#games">Games</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li class="language-selector">
+					<button onclick="toggleLanguageDropdown()">Language</button>
+					<ul class="language-dropdown">
+						<li><a href="#" data-lang="en">English</a></li>
+						<li><a href="#" data-lang="es">Español</a></li>
+						<li><a href="#" data-lang="fr">Français</a></li>
+						<li><a href="#" data-lang="zh">中文</a></li>
+						<li><a href="#" data-lang="hu">Magyar</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="home" class="hero">
+		<div class="overlay"></div>
+		<video autoplay muted loop id="hero-video">
+			<source src="vid/background.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<h2>You are trapped</h2>
+		<p>Observe your surroundings...</p>
+		<div class="scroll-down-container">
+			<c class="scroll-text">Scroll Down</c>
+			<div class="mouse-icon">
+				<span class="wheel"></span>
+			</div>
+		</div>
+	</section>
+
+	<section id="games" class="games-section">
+		<h2>My Games // Projects</h2>
+		<div class="games-list" id="gamesList">
+		</div>
+	</section>
+
+	<section id="about" class="about-section">
+		<h2>About Us</h2>
+		<p>Crafting horror experiences that make your skin crawl and heart race. My passion is to create terrifying, immersive indie games that linger with you long after you've played them.</p>
+	</section>
+
+	<section id="posts" class="posts-section">
+		<h2>Latest Posts</h2>
+		<p>Check out our latest posts on Facebook and Instagram</p>
+
+		<!-- The embedded Facebook posts -->
+		<div class="fb-post" data-href="https://www.facebook.com/original.fiends/posts/pfbid0fwFm3VNLko96x4QKXQLBcFzX5EiqjHGVjkqfpbt9qFEc2LQCKttJyioFrrAjxjVbl"
+			 data-width="500">
+		</div>
+		<!-- Container for buttons and Facebook post -->
+		<div class="posts-grid">
+			<!-- Button container for both Facebook and Instagram buttons -->
+			<div class="social-buttons">
+				<a href="https://www.facebook.com/original.fiends" target="_blank" class="btn-fb">Visit My Facebook</a>
+				<a href="https://www.instagram.com/white.wynter_" target="_blank" class="btn-ig btn-instagram">Visit My Instagram</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact" class="contact-section">
+		<h2>Contact Me</h2>
+		<form action="https://api.web3forms.com/submit" method="POST">
+			<input type="hidden" name="access_key" value="ea3ee64e-18cf-474f-a346-4de5d181a546">
+			<input type="text" name="name" placeholder="Your Name" required>
+			<input type="email" name="email" placeholder="Your Email" required>
+			<textarea name="message" placeholder="Your Message" required></textarea>
+			<button type="submit">Submit Message</button>
+		</form>
+		<script src="https://web3forms.com/client/script.js" async defer></script>
+	</section>
+
+	<footer>
+		<p> Copyright &copy; 2024 GrilledSwordGames | Norbert Kiss - Minden jog fenntartva. All Rights Reserved.</p>
+		<p> Contact: kiss.norbert.reall@gmail.com</p>
+	</footer>
+</body>
+</html>
