@@ -11,6 +11,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32">
+	<script src="js/headerAnimation.js" defer></script>
 </head>
 <body>
 	<div class="preloader">
@@ -25,7 +26,7 @@
 		<div class="logo">
 			<h1>GrilledSwordGames</h1>
 		</div>
-		<div class="menu-icon" onclick="toggleMenu()">
+		<div class="menu-icon" onclick="toggleMenu(this)">
 			<span></span>
 			<span></span>
 			<span></span>
@@ -37,7 +38,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="#contact">Contact</a></li>
 				<li class="language-selector">
-					<button onclick="toggleLanguageDropdown()">Language</button>
+					<button type="button">Language</button>
 					<ul class="language-dropdown">
 						<li><a href="#" data-lang="en">English</a></li>
 						<li><a href="#" data-lang="es">Español</a></li>

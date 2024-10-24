@@ -5,20 +5,33 @@
     const nav = document.querySelector('nav');
     const heroHeight = heroSection.offsetHeight;
     const languageSelector = document.querySelector('.language-selector');
+    const languageDropdown = document.querySelector('.language-dropdown');
     const languageLinks = document.querySelectorAll('.language-dropdown a');
 
-    languageSelector.addEventListener('click', function () {
-        this.classList.toggle('active'); // Toggle active class to show/hide dropdown
-    });
+    // Toggle the menu icon and dropdown visibility
+    function toggleMenu(menuIcon) {
+        nav.classList.toggle('active'); // Toggle visibility of the navigation
+        menuIcon.classList.toggle('active'); // Add active class to the menu icon
+    }
 
+    // Toggle the language dropdown
+    function toggleLanguageDropdown(event) {
+        event.stopPropagation(); // Prevent click event from bubbling up
+        languageDropdown.classList.toggle('active'); // Toggle the active class
+    }
+
+    // Close the dropdown if clicked outside of it
     document.addEventListener('click', function (event) {
         if (!languageSelector.contains(event.target)) {
-            languageSelector.classList.remove('active'); // Hide dropdown if clicked outside
+            languageDropdown.classList.remove('active'); // Hide dropdown if clicked outside
         }
     });
 
+    // Set up event listeners
+    languageSelector.querySelector('button').addEventListener('click', toggleLanguageDropdown);
+
     menuIcon.addEventListener('click', function () {
-        nav.classList.toggle('active');
+        toggleMenu(menuIcon);
     });
 
     // Sticky header on scroll
@@ -88,6 +101,7 @@
             preloader.classList.add('hidden');
         }, 500);
     });
+
     const translations = {
         en: {
             home: "Home",
@@ -224,13 +238,16 @@
         submitButton: document.querySelector('.contact-section button'),
     };
 
+    // Switch language function
     function switchLanguage(lang) {
         const translation = translations[lang] || translations['en'];
+
         // Update header links
         elementsToTranslate.homeLink.textContent = translation.home;
         elementsToTranslate.gamesLink.textContent = translation.games;
         elementsToTranslate.aboutLink.textContent = translation.about;
         elementsToTranslate.contactLink.textContent = translation.contact;
+
         // Update other sections
         elementsToTranslate.title.textContent = translation.title;
         elementsToTranslate.description.textContent = translation.description;
@@ -249,18 +266,19 @@
         elementsToTranslate.submitButton.textContent = translation.submitButton;
     }
 
-    // Language selection from dropdown
-    languageLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const selectedLang = this.getAttribute('data-lang');
-            switchLanguage(selectedLang);
-            localStorage.setItem('preferredLanguage', selectedLang); // Save the selected language
-            languageSelector.classList.remove('active'); // Close the dropdown
-        });
-    });
-
-    // Initialize with default language
+    // Initialize with default language or saved language
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
     switchLanguage(savedLanguage);
+
+    // Function to handle language change
+    function handleLanguageChange(event) {
+        const selectedLanguage = event.target.getAttribute('data-lang');
+        switchLanguage(selectedLanguage);
+        localStorage.setItem('preferredLanguage', selectedLanguage); // Save the language preference
+    }
+
+    // Attach event listeners to language dropdown links
+    languageLinks.forEach(link => {
+        link.addEventListener('click', handleLanguageChange);
+    });
 });

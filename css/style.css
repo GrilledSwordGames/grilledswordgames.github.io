@@ -23,13 +23,54 @@ header {
 	position: fixed;
 	border-radius: 45px; /* Rounded corners */
 	top: 1%;
-	left: 50%; /* Move header horizontally to the center */
-	transform: translateX(-50%); /* Center header by translating it back */
+	left: 5%; /* Move header horizontally to the center */
 	width: 90%; /* Make sure the width is 90% to provide space for the margin */
 	z-index: 1000;
 	transition: background-color 0.3s;
 	box-shadow: 0px 5px 30px #000000;
 	border: 1px solid #0F0F0F;
+	transition: top 0.3s ease, opacity 0.3s ease; /* Smooth transition for position and opacity */
+	transform: translateY(0); /* Start at original position */
+}
+
+/* Class for hiding the header */
+.header-hidden {
+	top: -100px; /* Move header above the viewport */
+	opacity: 0; /* Fade out */
+	transform: translateY(-20px) scale(0.95); /* Slight upward movement and scaling down */
+	animation: fadeOut 0.3s ease forwards; /* Animation when showing */
+}
+
+/* Class for showing the header */
+.header-visible {
+	top: 1%; /* Move header to the top of the page */
+	opacity: 1; /* Full opacity */
+	transform: translateY(0) scale(1); /* Original position and scale */
+	animation: fadeIn 0.3s ease forwards; /* Animation when showing */
+}
+
+/* Keyframes for fade in animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0; /* Start invisible */
+		transform: translateY(-10px) scale(0.95); /* Start from above and smaller */
+	}
+
+	to {
+		opacity: 1; /* Fully visible */
+		transform: translateY(0) scale(1); /* End at original position and scale */
+	}
+}
+@keyframes fadeOut {
+	from {
+		opacity: 1; /* Fully visible */
+		transform: translateY(0) scale(1); /* End at original position and scale */
+	}
+
+	to {
+		opacity: 0; /* Start invisible */
+		transform: translateY(-10px) scale(0.95); /* Start from above and smaller */
+	}
 }
 
 	/* Default Styles (for large screens) */
@@ -101,9 +142,6 @@ nav ul {
 
 /* Responsive for Medium Screens */
 @media (max-width: 900px) {
-	header nav ul li {
-		margin: 0 15px; /* Decrease spacing */
-	}
 
 	.nav-icon {
 		height: 20px; /* Reduce icon size */
@@ -117,9 +155,6 @@ nav ul {
 
 /* Responsive for Small Screens */
 @media (max-width: 600px) {
-	header nav ul li {
-		margin: 0 10px; /* Further decrease spacing */
-	}
 
 	.nav-icon {
 		height: 10px; /* Further reduce icon size */
@@ -130,19 +165,14 @@ nav ul {
 /* Mobile navigation (dropdown) */
 .menu-icon {
 	display: none;
-	flex-direction: column;
-	cursor: pointer;
-	margin-left: auto;
 }
 
-	.menu-icon span {
-		width: 30px;
-		height: 3px;
-		background-color: white;
-		margin: 4px 0;
-		transition: all 0.3s ease;
-		border-radius: 45px; /* Rounded corners */
+/* Mobile view media query to show the icon */
+@media (max-width: 950px) {
+	.menu-icon {
+		display: flex; /* Show the icon in mobile view */
 	}
+}
 
 /* HERO ITEMS */
 .hero {
@@ -460,14 +490,13 @@ footer {
 	padding: 10px 15px; /* Padding for the button */
 	transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
 	display: flex;
-	align-items: center; /* Center align the items */
+	align-content: center; /* Center align the items */
 }
 
 	.language-selector:hover {
 		background: rgba(255, 0, 0, 0.3); /* Change background color on hover */
 	}
 
-	/* Adjust the dropdown button specifically */
 	.language-selector button {
 		background: transparent; /* Make the button background transparent */
 		color: inherit; /* Inherit text color from parent */
@@ -478,45 +507,41 @@ footer {
 		padding: 0; /* Remove padding from button */
 		margin: 0; /* Remove margin */
 		width: 100%; /* Full width for better click area */
+		align-content: center; /* Center align the items */
 	}
 
-/* Update the dropdown items styles as needed */
 .language-dropdown {
 	display: none; /* Hide dropdown by default */
-	position: absolute;
-	top: calc(100% + 15px); /* Position below the button with a small gap */
-	left: 50%; /* Align to the center of the button */
-	transform: translateX(-50%); /* Center the dropdown */
+	position: absolute; /* Position it correctly */
 	background: rgba(0, 0, 0, 0.8); /* Background color for dropdown */
-	list-style: none;
+	list-style: none; /* Remove bullet points */
 	padding: 0;
 	margin: 0;
+	z-index: 1000; /* Make sure it appears above other content */
 	border-radius: 32px; /* Rounded corners for dropdown */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-	z-index: 1000; /* Ensure it appears above other content */
-	text-align: center;
+	top: 150%; /* Position it below the button */
+	left: 50%; /* Start from the center */
+	transform: translateX(-50%); /* Move it back by half its width to center it */
 }
 
-	/* Ensure that the links in the dropdown are styled properly */
-	.language-dropdown li a {
-		display: block; /* Full width clickable area */
-		padding: 10px 15px; /* Padding for dropdown items */
-		color: white; /* Text color */
-		text-decoration: none; /* Remove underline */
-		transition: background-color 0.3s; /* Transition for hover effect */
-		border-radius: 32px;
+	.language-dropdown.active {
+		display: block; /* Show dropdown when active */
 	}
 
-		.language-dropdown li a:hover {
-			background: rgba(255, 0, 0, 0.3); /* Change color on hover */
-			border-radius: 32px;
+	.language-dropdown li {
+		padding: 10px; /* Padding for each item */
+	}
+
+		.language-dropdown li a {
+			text-decoration: none; /* Remove underline */
+			color: white; /* Text color */
 		}
 
-/* Show dropdown when active */
-.language-selector.active .language-dropdown {
-	display: block; /* Show the dropdown */
-	backdrop-filter: blur(25px); /* Blur effect */
-}
+			.language-dropdown li a:hover {
+				background-color: #f0f0f0; /* Hover effect */
+				color: black; /* Change text color on hover */
+			}
 
 @media (max-width: 950px) {
 	header {
@@ -528,48 +553,83 @@ footer {
 	}
 
 	nav ul {
-		margin-right: 0px;
+		display: inline-flex;
+		margin-right: 0;
 		visibility: hidden;
 		opacity: 0;
-		transform: translateY(-20px);
+		transform: translateY(-20px) translateX(-50%); /* Move up and center */
 		transition: opacity 0.3s ease, transform 0.3s ease;
 		flex-direction: row;
-		background: rgba(0, 0, 0, 0.75); /* Átlátszó háttér */
+		background: rgba(0, 0, 0, 0.75); /* Transparent background */
 		backdrop-filter: blur(25px);
 		box-shadow: 0px 0px 30px #080808;
 		border-radius: 32px;
 		position: absolute;
-		top: 120%;
-		right: 0;
-		width: 100%;
-		text-align: center;
-		z-index: 999; /* Emeld a menüt elölre */
+		top: 120%; /* Position below the menu icon */
+		transform: translate(-100%, -20px);
+		width: fit-content; /* Automatically size the dropdown */
+		z-index: 999; /* Bring the menu to the front */
 	}
 
 	nav.active ul {
 		visibility: visible;
 		opacity: 1;
 		transform: translateY(0);
+		transform: translate(-100%, 0);
 	}
 
 	nav ul li {
-		margin: 0;
+		margin-right: 0;
+		margin-left: 0;
 		padding: 5px 0;
-		flex-grow: 1;
 		border-bottom: none;
+		line-height: 1rem; /* Adjust line height */
 	}
 
 		nav ul li a {
-			font-size: 0.4rem;
+			font-size: 0.35rem;
 			white-space: nowrap;
-			gap: 2px;
+			word-spacing: -30px !important; /* Temporarily large to test */
+			letter-spacing: -0.5px !important;
+			display: inline-block; /* Ensure proper spacing behavior */
+		}
+
+	/* Mobile navigation (dropdown) */
+	.menu-icon {
+		display: flex;
+		flex-direction: column;
+		cursor: pointer;
+		margin-left: auto;
+		transition: transform 0.3s ease; /* Add transition for the icon */
+	}
+
+		.menu-icon span {
+			width: 30px;
+			height: 3px;
+			background-color: white;
+			margin: 4px 0;
+			transition: all 0.3s ease; /* Ensure transitions for all properties */
+			border-radius: 45px; /* Rounded corners */
+		}
+
+		.menu-icon.active span:nth-child(1) {
+			transform: translateY(11px) rotate(225deg); /* Top line to X */
+		}
+
+		.menu-icon.active span:nth-child(2) {
+			opacity: 0; /* Hide the middle line */
+			transform: rotate(-180deg);
+		}
+
+		.menu-icon.active span:nth-child(3) {
+			transform: translateY(-11px) rotate(-225deg); /* Bottom line to X */
 		}
 
 	.menu-icon {
-		display: flex;
+		display: flex; /* Show the icon in mobile view */
 	}
 
-	/* Optionális: Háttér hozzáadása */
+
 	nav:before {
 		content: '';
 		position: fixed;
@@ -628,76 +688,56 @@ footer {
 		margin-top: 5px;
 		z-index: 1;
 	}
+}
+@media (max-width: 700px) {
+	nav ul {
+		display: block; /* Use flex to control layout */
+		flex-direction:  column; /* Align items in a row (horizontal) */
+		align-items: center; /* Align items vertically in the middle */
+		width: fit-content; /* Ensure it takes up the available width */
 
-	.language-selector {
-		position: relative; /* Position relative to the header */
-		font-size: 0.75rem;
 	}
 
-	/* Dropdown styles */
-	.language-dropdown {
-		display: none; /* Hide by default */
-		position: absolute;
-		top: calc(100% + 20px); /* Position below the language button */
-		left: initial;
-		transform: translateX(50%); /* Center the dropdown relative to the header */
-		background: rgba(0, 0, 0, 0.8); /* Background for visibility */
-		list-style: none;
-		padding: 5px; /* Add padding around the dropdown */
-		border-radius: 32px; /* Rounded corners */
-		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-		z-index: 1000; /* Ensure it appears above other content */
-		width: fit-content; /* Automatically size the dropdown */
-	}
-
-		/* Display dropdown items side by side */
-		.language-dropdown li {
-			display: block;
-			padding: 5px;
+		nav ul li {
+			flex: 1; /* Allow list items to grow equally */
+			text-align: center; /* Center the text in each list item */
 		}
 
-			/* Styling for dropdown links */
-			.language-dropdown li a {
-				padding: 10px 20px; /* Adjust padding for better spacing */
+			nav ul li a {
+				font-size: 0.5rem; /* Adjust font size for smaller viewports */
+				padding: 5px; /* Add padding to increase clickable area */
+				white-space: nowrap; /* Prevent text wrapping */
 			}
+}
 
-	/* Show dropdown when the .active class is applied */
-	.language-selector.active .language-dropdown {
-		display: block; /* Flexbox to show items side by side */
-		flex-direction: row;
-		justify-content: center; /* Ensure the dropdown content is centered */
+	.preloader {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #111;
+		display: flex;
+		justify-content: center;
 		align-items: center;
+		z-index: 9999;
+		transition: opacity 0.5s ease-out; /* Add transition for smooth fade-out */
 	}
-}
 
-.preloader {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #111;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 9999;
-	transition: opacity 0.5s ease-out; /* Add transition for smooth fade-out */
-}
-
-.spinner {
-	width: 50px;
-	height: 50px;
-	border: 5px solid rgba(255, 255, 255, 0.3);
-	border-top-color: #fff;
-	border-radius: 50%;
-	animation: spin 1s infinite linear;
-}
-
-@keyframes spin {
-	to {
-		transform: rotate(360deg);
+	.spinner {
+		width: 50px;
+		height: 50px;
+		border: 5px solid rgba(255, 255, 255, 0.3);
+		border-top-color: #fff;
+		border-radius: 50%;
+		animation: spin 1s infinite linear;
 	}
-}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
 
 .hidden {
 	opacity: 0; /* Fade out effect */
@@ -708,4 +748,32 @@ footer {
 	border: 1px solid #FF4876;
 	box-shadow: 0 0 10px rgba(255, 72, 118, 0.5);
 	transition: 0.3s ease;
+}
+
+/* MEDIA QUERIES FOR DIFFERENT SCREEN SIZES */
+
+/* For screens up to 950px wide */
+@media (max-width: 950px) {
+	.language-selector {
+		font-size: 0.9rem; /* Reduce button font size */
+	}
+
+	.language-dropdown {
+		top: 140%; /* Adjust dropdown position */
+		left: 112%; /* Still centered */
+		transform: translateX(-50%); /* Center the dropdown */
+	}
+}
+
+/* For screens up to 700px wide */
+@media (max-width: 700px) {
+	.language-selector {
+		font-size: 0.8rem; /* Further reduce button font size */
+	}
+
+	.language-dropdown {
+		top: 130%; /* Adjust dropdown position */
+		left: 125%; /* Still centered */
+		transform: translateX(-50%); /* Center the dropdown */
+	}
 }
