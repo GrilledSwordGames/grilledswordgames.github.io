@@ -32,6 +32,28 @@ header {
 	border: 1px solid #0F0F0F;
 }
 
+	/* Default Styles (for large screens) */
+	header nav ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		padding: 0;
+	}
+
+		header nav ul li {
+			margin: 0 20px; /* Adjust spacing between menu items */
+		}
+
+			header nav ul li a {
+				display: flex;
+				align-items: center;
+				text-decoration: none;
+				color: white;
+				font-size: 1rem;
+			}
+
+
 .logo h1 {
 	font-size: 2rem; /* Increase font size */
 	font-family: "Raleway", sans-serif;
@@ -55,7 +77,7 @@ nav ul {
 		nav ul li a {
 			text-decoration: none;
 			color: #fff;
-			font-size: 1.5rem;
+			font-size: 1.75rem;
 			transition: color 0.3s;
 			font-family: "Raleway", sans-serif;
 			font-weight: 400;
@@ -65,6 +87,45 @@ nav ul {
 			nav ul li a:hover {
 				color: #f00;
 			}
+.nav-icon {
+	height: 10px;
+	width: auto;
+	margin-right: 10px;
+	transition: all 0.3s ease; /* Smooth scaling transitions */
+}
+
+.nav-text {
+	display: inline; /* Text is visible on larger screens */
+	transition: all 0.3s ease; /* Smooth transitions for hiding */
+}
+
+/* Responsive for Medium Screens */
+@media (max-width: 900px) {
+	header nav ul li {
+		margin: 0 15px; /* Decrease spacing */
+	}
+
+	.nav-icon {
+		height: 20px; /* Reduce icon size */
+		margin-right: 5px; /* Adjust space between icon and text */
+	}
+
+	.nav-text {
+		display: none; /* Hide text on medium screens */
+	}
+}
+
+/* Responsive for Small Screens */
+@media (max-width: 600px) {
+	header nav ul li {
+		margin: 0 10px; /* Further decrease spacing */
+	}
+
+	.nav-icon {
+		height: 10px; /* Further reduce icon size */
+		margin-right: 0; /* No space needed when text is hidden */
+	}
+}
 
 /* Mobile navigation (dropdown) */
 .menu-icon {
@@ -80,6 +141,7 @@ nav ul {
 		background-color: white;
 		margin: 4px 0;
 		transition: all 0.3s ease;
+		border-radius: 45px; /* Rounded corners */
 	}
 
 /* HERO ITEMS */
@@ -390,7 +452,7 @@ footer {
 	font-weight: 400; /* Slightly bolder font weight */
 	text-decoration: none !important;
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	cursor: pointer; /* Change cursor to pointer */
 	background: rgba(0, 0, 0, 0.5); /* Background color for the button */
 	border: 1px solid #444; /* Border color */
@@ -456,7 +518,7 @@ footer {
 	backdrop-filter: blur(25px); /* Blur effect */
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 950px) {
 	header {
 		padding: 1rem;
 	}
@@ -473,6 +535,7 @@ footer {
 		transition: opacity 0.3s ease, transform 0.3s ease;
 		flex-direction: row;
 		background: rgba(0, 0, 0, 0.75); /* Átlátszó háttér */
+		backdrop-filter: blur(25px);
 		box-shadow: 0px 0px 30px #080808;
 		border-radius: 32px;
 		position: absolute;
@@ -491,14 +554,15 @@ footer {
 
 	nav ul li {
 		margin: 0;
-		padding: 20px 0;
+		padding: 5px 0;
 		flex-grow: 1;
 		border-bottom: none;
 	}
 
 		nav ul li a {
-			font-size: 0.5rem;
+			font-size: 0.4rem;
 			white-space: nowrap;
+			gap: 2px;
 		}
 
 	.menu-icon {
@@ -567,7 +631,7 @@ footer {
 
 	.language-selector {
 		position: relative; /* Position relative to the header */
-		font-size: 0.5rem;
+		font-size: 0.75rem;
 	}
 
 	/* Dropdown styles */
